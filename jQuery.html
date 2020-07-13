@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		<!--Hide and Show-->
+			<!-- Ex1 -->
+				$("#Ex1").click(function(){
+					$(this).hide();
+				});
+			<!-- Ex2 -->
+				$("#Ex2").click(function(){
+					$(this).hide("slow");
+				});
+			<!-- Ex3 -->
+				$("#Ex3").click(function(){
+				    $("p").show();
+			    });
+		    <!-- Ex4 -->
+				$("#Ex4").click(function(){
+				    $("p").toggle();
+			    });
+		<!-- Fade -->
+    			$("#div1").fadeOut();
+			    $("#div2").fadeOut("slow");
+			    $("#div3").fadeTo("slow",0.2);
+			    $("button").click(function(){
+					$("#div4").fadeToggle(1000);
+                });
+	    <!-- Slide -->
+			    $("#div5").slideUp();
+			    $("#div6").slideUp("slow");
+			    $("#div7").slideDown();
+			    $("button").click(function(){
+					$("#div8").slideToggle();
+                });
+		<!-- Animate -->
+			    $("#div9").animate({left:'250px'});
+			    $("#div10").animate({height:'500px'});
+			    $("#div11").animate({
+					opacity:'0.4',
+					height:'500px',
+					width:'500px'
+				});
+			    $("#div12").animate({fontSize:'500px'},"slow");
+		<!-- Stop -->
+			    $("#flip").click(function(){
+                    $("#panel").slideDown(5000);
+                });
+                $("#stop").click(function(){
+                    $("#panel").stop();
+                });
+		});
+	</script>
+	<style> 
+#panel, #flip {
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  border: solid 1px #666;
+  border-radius: 3px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+
+<body>	
+<h2>jQuery Effects</h2>
+<!-- jQuery Hide and Show	-->
+	<h3><b>1.Hide and Show</b></h3>
+    <!-- EX1: ẩn (hide)	-->
+	    <p id="Ex1">Ex1: Ấn vào dòng chữ để ẩn dòng chữ (ẩn phần tử p khi được nhấp vào)</p>
+	<!-- EX2: ẩn (hide) tốc độ chậm (slow)	-->
+	    <p id="Ex2">Ex2: Ấn vào dòng chữ để ẩn dòng chữ để ẩn dòng chữ với tốc độ chậm</p>
+	<!-- EX3: hiện (show)	-->
+	    <button id="Ex3">Ex3: Ấn vào nút để hiện dòng chữ đã ẩn</button>
+    <!-- Ex4: chuyển đổi giữa ẩn và hiển thị phần tử <p> (toggle)	-->
+	    <button id="Ex4">Ex4: Ấn vào nút để chuyển đổi giữa hiện và ẩn</button>
+	<h3><b>2.Fade</b></h3>
+    <!-- Ex1: làm mờ dần phần tử <div>	-->
+		<p>EX1: mờ dần phần tử: </p>
+		<div id="div1" style="width:80px;height:80px;background-color:yellow;"></div><br>
+	<!-- Ex3: làm mờ dần phần tử <div> chậm (slow)	-->
+		<p>EX2: mờ dần phần tử chầm chậm: </p>
+		<div id="div2"  style="width:80px;height:80px;background-color:yellow;"></div><br>
+	<!-- Ex3: làm mờ dần phần tử <div> độ mờ 0.2	-->
+		<p>EX2: mờ dần phần tử, độ mờ 0.2 </p>
+		<div id="div3"  style="width:80px;height:80px;background-color:yellow;"></div><br>
+	<!-- Ex4: nút chuyển đổi làm mờ dần phần tử <div> thời gian 1000 mili giây	-->
+		<p>Ex4: nút chuyển đổi làm mờ dần phần tử, thời gian 1000 mili giây </p>
+		<div id="div4" style="width:80px;height:80px;background-color:yellow;"></div><br>
+	    <button  >click vào đây</button>
+	<h3><b>3.Slide</b></h3>
+	    <p>Ex1: trượt phần tử </p>
+		<div id="div5" style="width:80px;height:80px;background-color:red;"></div><br>
+	    <p>Ex2: trượt phần tử (slow) </p>
+		<div id="div6" style="width:80px;height:80px;background-color:red;"></div><br>
+        <p>Ex3: trượt xuống phần tử </p>
+		<div id="div7" style="width:80px;height:80px;background-color:red;"></div><br>
+	    <p>Ex4: nút chuyển đổi trượt lên và xuống phần tử </p>
+		<div id="div8" style="width:80px;height:80px;background-color:red;"></div><br>
+	    <button>click để trượt</button>
+	<h3><b>4.Animate</b></h3>
+	    <p>Ex1: Chuyển phần tử sang phải 250px </p>
+	    <div id="div9" style="width:80px;height:80px;background-color:blue;"></div><br>
+	    <p>Ex2: đặt chiều cao của phần tử  thành 500 pixel.</p>
+	    <div id="div10" style="width:80px;height:80px;background-color:blue;"></div><br>
+	    <p>Ex3: đặt các thuộc tính CSS sau cho DIV:opacity: 0.4, height: 500px, width: 500px.</p>
+	    <div id="div11" style="width:80px;height:80px;background-color:blue;"></div><br>
+	    <p>Ex4: đặt kích thước phông chữ của phần tử  thành 100 pixel: Thời lượng của hiệu ứng "chậm".</p>
+	    <div id="div12" > <p>TOI YEU VIET NAM</p></div>
+	<h3><b>5. jQuery Stop: dừng hiệu ứng hoạt họa của phần tử</b></h3>
+	    <button id="stop"> Ấn để dừng hiệu ứng </button>
+
+        <div id="flip">Ấn để chạy xuống slide nha thầy  </div>
+        <div id="panel"><b>Bài dài quá mà thời gian ít chạy không kịp deadline thầy ơi :(((</b></div>
+
+	
+	        
+
+</body>
+</html>
